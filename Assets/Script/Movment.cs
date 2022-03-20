@@ -5,6 +5,7 @@ public class Movment : MonoBehaviour{
     public bool Juming = false;
     void FixedUpdate(){
         if(Input.GetKey(KeyCode.A)) {
+            gameObject.transform.rotation = Quaternion.Euler(0, 180,0);
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 4550);
         }
 
@@ -13,6 +14,7 @@ public class Movment : MonoBehaviour{
         }
 
         if(Input.GetKey(KeyCode.D)) {
+            gameObject.transform.rotation= Quaternion.Euler(0, 0, 0);
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 4550);
         }
 
