@@ -2607,7 +2607,7 @@ GameObject:
   - component: {fileID: 1443914861}
   m_Layer: 5
   m_Name: Nal
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2628,7 +2628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: -150}
+  m_AnchoredPosition: {x: -400, y: -195}
   m_SizeDelta: {x: 50, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443914861
@@ -2741,7 +2741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df9a381ba133544cb3646813a58d112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tester: {fileID: 5760814464241553071, guid: 2c0a2a5c8fdcf0944834273a3366b8b4, type: 3}
 --- !u!1 &2095870458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,6 +2753,7 @@ GameObject:
   - component: {fileID: 2095870461}
   - component: {fileID: 2095870460}
   - component: {fileID: 2095870459}
+  - component: {fileID: 2095870463}
   m_Layer: 5
   m_Name: Screen
   m_TagString: Untagged
@@ -2843,3 +2843,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2095870463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095870458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1925c41f71b44304a80fffbc1c649084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

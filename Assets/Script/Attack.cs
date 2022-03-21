@@ -9,22 +9,24 @@ public class Attack : MonoBehaviour{
     void Start() {
         Tester = Resources.Load<GameObject>("T");
         OriPos = gameObject.transform;
+        Tester.tag = "GoodMoch";
     }
 
     void Update(){
-        if(Input.GetMouseButtonDown(0)) {
+        if(Input.GetMouseButtonDown(0) && Core.NalMoches > 0) {
             //GetVector2
             Mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             NalPos = gameObject.transform.position;
             Finale = Mouse - NalPos;
             F_Nmr = Finale.normalized;
             if(F_Nmr.x < 0) {
-                Dpl = Instantiate(Tester, OriPos.position + (Vector3.left * 15.0f), Quaternion.identity);
+                Dpl = Instantiate(Tester, OriPos.position + (Vector3.left* 55.0f), Quaternion.identity);
             } else if(F_Nmr.x > 0) {
-                Dpl = Instantiate(Tester, OriPos.position + (Vector3.right * 15.0f), Quaternion.identity);
+                Dpl = Instantiate(Tester, OriPos.position + (Vector3.right* 55.0f), Quaternion.identity);
             }
 
             Dpl.GetComponent<Moch>().ShootVec2 = F_Nmr;
+            Core.NalMoches--;
         }
     }
 }
