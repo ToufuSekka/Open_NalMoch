@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour{
     }
 
     void Update(){
-        if(Input.GetMouseButtonDown(0) && Core.NalMoches > 0) {
+        if(Input.GetMouseButtonDown(0) && GetComponent<Status>().SpecStat["Moches"] > 0) {
             //GetVector2
             Mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             NalPos = gameObject.transform.position;
@@ -26,7 +26,7 @@ public class Attack : MonoBehaviour{
             }
 
             Dpl.GetComponent<Moch>().ShootVec2 = F_Nmr;
-            Core.NalMoches--;
+            GetComponent<Status>().SpecStat["Moches"] -= 1; 
         }
     }
 }

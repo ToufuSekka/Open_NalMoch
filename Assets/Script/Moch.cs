@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class Moch : MonoBehaviour{
     public Vector2 ShootVec2;
-    public float MochLife = 0;
-
+    
     private System.Random MochMove;
     private float MochTimer = 0;
     private Transform trns;
@@ -13,11 +12,14 @@ public class Moch : MonoBehaviour{
     private GameObject MochDuply;
 
     void Awake() {
+        gameObject.AddComponent<Status>();
         trns = gameObject.transform;
     }
 
     void Start() {
-        MochLife = 1;
+        GetComponent<Status>().Life = 1;
+        GetComponent<Status>().Damage = 1;
+
         if(gameObject.CompareTag("BadMoch")) {
             StartCoroutine(BadAI());
         }
@@ -40,13 +42,15 @@ public class Moch : MonoBehaviour{
     private void OnCollisionEnter2D(Collision2D collision) {
         MochDuply = collision.collider.gameObject;
         if(MochDuply.CompareTag("Player")  && gameObject.CompareTag("GoodMoch")) {
-            Core.NalMoches++;
             Destroy(this.gameObject);
         };
 
-        if(MochDuply.CompareTag("GoodMoch") && MochDuply.GetComponent<Moch>().MochLife ==1&& gameObject.CompareTag("BadMoch")) {
-            MochLife--;
-            MochDuply.GetComponent<Moch>().MochLife--;
+        if(MochDuply.CompareTag("GoodMoch") && MochDuply.GetComponent<Status>().Life ==1&& gameObject.CompareTag("BadMoch")) {
+            
+            //∏¬Ó¡Í±›§–§–
+            GetComponent<Status>().Life--;
+            MochDuply.GetComponent<Status>().Life--;
+
             gameObject.transform.GetChild(0).GetComponent<Image>().color = Color.blue;
             gameObject.tag = "GoodMoch";
         };

@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootVec2: {x: 0, y: 0}
-  MochLife: 0
 --- !u!223 &6847624326016508779
 Canvas:
   m_ObjectHideFlags: 0
